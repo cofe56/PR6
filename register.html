@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Реєстрація користувача | Авіаційний портал</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+  <body class="form-page">
+    <header class="form-heading container">
+      <a href="index.html" class="back-link">← На головну AeroHub</a>
+      <h1>Реєстрація автора або читача</h1>
+      <p>Створіть профіль для коментування та публікації матеріалів про авіацію.</p>
+    </header>
+
+    <main class="form-main container">
+      <form action="/register" method="post" class="form-panel">
+        <div class="field">
+          <label for="reg-name">Ім'я або позивний</label>
+          <input type="text" id="reg-name" name="displayName" autocomplete="name" minlength="2" maxlength="80" required class="field-control" aria-describedby="reg-name-error">
+        <p id="reg-name-error" class="field-error">Помилка: заповніть поле відповідно до вказаних вимог.</p>
+</div>
+
+        <div class="field">
+          <label for="reg-email">Електронна пошта</label>
+          <input type="email" id="reg-email" name="email" autocomplete="email" required class="field-control" aria-describedby="reg-email-error">
+        <p id="reg-email-error" class="field-error">Помилка: введіть адресу пошти у форматі name@example.com.</p>
+</div>
+
+        <div class="field">
+          <label for="reg-password">Пароль</label>
+          <p id="password-hint" class="field-hint">Не менше ніж 8 символів.</p>
+          <input type="password" id="reg-password" name="password" autocomplete="new-password" minlength="8" aria-describedby="password-hint reg-password-error" required class="field-control">
+        <p id="reg-password-error" class="field-error">Помилка: заповніть поле відповідно до вказаних вимог.</p>
+</div>
+
+        <div class="field">
+          <label for="reg-confirm-password">Підтвердження пароля</label>
+          <input type="password" id="reg-confirm-password" name="confirmPassword" autocomplete="new-password" minlength="8" required class="field-control" aria-describedby="reg-confirm-password-error">
+        <p id="reg-confirm-password-error" class="field-error">Помилка: заповніть поле відповідно до вказаних вимог.</p>
+</div>
+
+        <div class="field">
+          <label class="choice-label">
+            <input type="checkbox" id="reg-terms" name="terms" required>
+            Я погоджуюся з правилами публікації та політикою конфіденційності
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="button">Зареєструватися</button>
+        </div>
+      </form>
+
+      <p>Вже зареєстровані? <a href="login.html">Увійти</a></p>
+    <p class="form-note">Навчальна форма. Сервер обробки даних буде підключено окремо.</p></main>
+  <footer class="form-footer container"><p>© 2026 AeroHub · Світ авіації у твоїх руках</p></footer>
+</body>
+</html>

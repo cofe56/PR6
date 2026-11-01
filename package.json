@@ -1,0 +1,12 @@
+{
+  "name": "aerohub-practical-06",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Модель публікацій AeroHub і чисті функції без DOM",
+  "scripts": {
+    "test": "node scripts/article-service.test.js",
+    "demo": "node scripts/demo.js"
+  },
+  "engines": { "node": ">=18" }
+}

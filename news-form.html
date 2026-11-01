@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Додати авіаційну новину | Авіаційний портал</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+  <body class="form-page">
+    <header class="form-heading container">
+      <a href="index.html" class="back-link">← На головну AeroHub</a>
+      <h1>Створення нової публікації</h1>
+      <p>Заповніть форму для розміщення матеріалу в новинній стрічці порталу.</p>
+    </header>
+
+    <main class="form-main container">
+      <form action="/articles/create" method="post" class="form-panel">
+        <div class="field">
+          <label for="article-title">Заголовок матеріалу</label>
+          <p id="title-hint" class="field-hint">Від 5 до 120 символів. Має стисло передавати суть новини.</p>
+          <input type="text" id="article-title" name="title" minlength="5" maxlength="120" aria-describedby="title-hint article-title-error" required class="field-control">
+        <p id="article-title-error" class="field-error">Помилка: заповніть поле відповідно до вказаних вимог.</p>
+</div>
+
+        <div class="field">
+          <label for="article-category">Тематичний розділ</label>
+          <select id="article-category" name="category" required class="field-control" aria-describedby="article-category-error">
+            <option value="">Оберіть категорію...</option>
+            <option value="civil">Цивільна авіація</option>
+            <option value="military">Військова авіація</option>
+            <option value="drones">БПЛА та безпілотні системи</option>
+            <option value="technologies">Авіоніка та двигунобудування</option>
+          </select>
+        <p id="article-category-error" class="field-error">Помилка: заповніть поле відповідно до вказаних вимог.</p>
+</div>
+
+        <fieldset class="choice-group">
+          <legend>Тип публікації</legend>
+          <label class="choice-label">
+            <input type="radio" name="articleType" value="news" required checked>
+            Оперативна новина
+          </label>
+          <label class="choice-label">
+            <input type="radio" name="articleType" value="analysis">
+            Аналітична стаття
+          </label>
+          <label class="choice-label">
+            <input type="radio" name="articleType" value="tech-review">
+            Огляд техніки
+          </label>
+        </fieldset>
+
+        <div class="form-row">
+<div class="field">
+          <label for="article-event-date">Дата події</label>
+          <input type="date" id="article-event-date" name="eventDate" required class="field-control" aria-describedby="article-event-date-error">
+        <p id="article-event-date-error" class="field-error">Помилка: заповніть поле відповідно до вказаних вимог.</p>
+</div>
+
+        <div class="field">
+          <label for="article-reading-time">Орієнтовний час читання (у хвилинах)</label>
+          <input type="number" id="article-reading-time" name="readingTime" min="1" max="60" step="1" value="3" required class="field-control" aria-describedby="article-reading-time-error">
+        <p id="article-reading-time-error" class="field-error">Помилка: введіть ціле число від 1 до 60.</p>
+</div>
+
+        </div>
+<div class="field">
+          <label for="article-content">Повний зміст публікації</label>
+          <textarea id="article-content" name="content" rows="8" cols="50" minlength="30" maxlength="5000" required class="field-control" aria-describedby="article-content-error"></textarea>
+        <p id="article-content-error" class="field-error">Помилка: заповніть поле відповідно до вказаних вимог.</p>
+</div>
+
+        <fieldset class="choice-group">
+          <legend>Параметри публікації</legend>
+          <label class="choice-label">
+            <input type="checkbox" name="isUrgent" value="yes">
+            Термінова новина (додати позначку «Важливо»)
+          </label>
+          <label class="choice-label">
+            <input type="checkbox" name="allowComments" value="yes" checked>
+            Дозволити обговорення в коментарях
+          </label>
+        </fieldset>
+
+        <div class="field">
+<label for="review-status">Статус модерації</label><input class="field-control" id="review-status" value="Очікує надсилання" disabled><p class="field-hint">Статус призначає редактор після отримання матеріалу.</p>
+</div>
+<div class="form-actions">
+          <button type="submit" class="button">Опублікувати матеріал</button>
+          <a href="index.html" class="button button--secondary">Скасувати</a>
+        <button class="button button--secondary" type="button" disabled>Автозбереження недоступне</button>
+</div>
+      </form>
+    <p class="form-note">Навчальна форма. Сервер обробки даних буде підключено окремо.</p></main>
+  <footer class="form-footer container"><p>© 2026 AeroHub · Світ авіації у твоїх руках</p></footer>
+</body>
+</html>
